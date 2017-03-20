@@ -28,7 +28,7 @@ class GameInput extends Component {
       memeText: message,
       value: ''
     });
-    this.props.setGameInput(message)
+    this.props.setGameInput(message);
   }
   render() {
     return (
