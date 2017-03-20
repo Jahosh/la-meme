@@ -8,7 +8,7 @@ let ioRef;
 let self;
 
 	function getMemePhoto(room, io) {
-    axios.get(`http://localhost:${process.env.PORT}/api/memes`)
+    axios.get(`http://localhost:${PORT}/api/memes`)
     .then((results) => {
       const photoUrl = results.data;
       io.in(room).emit('photoUrl', photoUrl);
