@@ -8,23 +8,22 @@ const bodyParser = require('body-parser');
 const router = require('./routes');
 
 const socketController = require('./app/controllers/socketController');
-const redisController = require('./app/controllers/redisController');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.resolve(__dirname, 'client')));
+app.use(express.static('client/dist'));
 
 app.use('/', router);
 
-app.get('/login*', (req, res) => {
-  console.log(req);
-  res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
-});
+// app.get('/login*', (req, res) => {
+//   console.log(req);
+//   res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
+// });
 
 
 /*

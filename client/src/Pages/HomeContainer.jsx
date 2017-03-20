@@ -21,7 +21,7 @@ class Home extends Component {
   render() {
     return (  
       <div>
-      <a href="/login"><Button bsStyle="primary">Login</Button></a>
+      <Link to="/login"><Button bsStyle="primary">Login</Button></Link>
         <div className="text-center">
           <img src="http://i.imgur.com/79ctaQX.png" alt="la même"/>
         </div>

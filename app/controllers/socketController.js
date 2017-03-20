@@ -8,14 +8,14 @@ let ioRef;
 let self;
 
 	function getMemePhoto(room, io) {
-  axios.get('http://localhost:3000/api/memes')
-  .then((results) => {
-    const photoUrl = results.data;
-    io.in(room).emit('photoUrl', photoUrl);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+    axios.get(`http://localhost:${process.env.PORT}/api/memes`)
+    .then((results) => {
+      const photoUrl = results.data;
+      io.in(room).emit('photoUrl', photoUrl);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 module.exports = {
   init(io) {
