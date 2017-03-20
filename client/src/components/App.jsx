@@ -20,7 +20,7 @@ import LoginPage from '../Pages/Login';
 import AuthService from '../../utils/AuthService';
 
 /* Socket.IO Connection */
-const socket = io(`http:localhost:${PORT}`);
+const socket = io(`http:localhost:${PORT}`)
 
 // handles our protected routes
 function PrivateRoute({ component: Component, authed, authService, userProfile, socket, logout, ...rest }) {
